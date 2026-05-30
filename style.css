@@ -247,6 +247,51 @@ a:hover { color: var(--gold2); }
 .case-card p { font-size: 0.9rem; color: var(--dgray); line-height: 1.7; }
 .case-card strong { color: var(--navy); }
 
+/* ── CAMPAIGN GALLERY ──────────────────────────────────────────── */
+.campaign-gallery {
+  grid-column: 1 / -1;
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+  padding: 2rem 2rem 2.2rem;
+}
+.gallery-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.4rem;
+}
+.gallery-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+.gallery-figure {
+  margin: 0;
+  background: var(--navy);
+  min-height: 220px;
+  display: flex; flex-direction: column;
+}
+.gallery-img {
+  width: 100%; height: 260px; object-fit: cover;
+  display: block;
+}
+.gallery-figure figcaption {
+  font-size: 0.78rem; color: var(--dgray);
+  padding: 0.6rem 0.2rem 0.2rem;
+  line-height: 1.55; font-style: italic;
+}
+.gallery-cta { text-align: center; }
+.tv-ad-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--navy); color: var(--white) !important;
+  padding: 0.85rem 2.4rem;
+  font-size: 0.88rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.tv-ad-btn:hover {
+  background: var(--gold); color: var(--navy) !important;
+  transform: translateY(-2px);
+}
+
 /* ── WEB ───────────────────────────────────────────────────────── */
 #web { padding: 6rem 0; background: var(--lgray); }
 .web-intro {
@@ -356,6 +401,9 @@ a:hover { color: var(--gold2); }
 }
 
 @media (max-width: 640px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-img  { height: 220px; }
+
   .nav-links {
     display: none; flex-direction: column; gap: 0;
     position: absolute; top: 100%; left: 0; right: 0;
