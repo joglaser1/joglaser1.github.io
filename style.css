@@ -146,11 +146,13 @@ a:hover { color: var(--gold2); }
   text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;
 }
 .competencies {
-  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
 }
 .competencies span {
   background: var(--white); color: var(--dgray);
-  padding: 0.4rem 0.9rem; font-size: 0.82rem;
+  padding: 0.5rem 0.9rem; font-size: 0.82rem;
   border-left: 3px solid var(--gold);
 }
 
