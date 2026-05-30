@@ -247,6 +247,139 @@ a:hover { color: var(--gold2); }
 .case-card p { font-size: 0.9rem; color: var(--dgray); line-height: 1.7; }
 .case-card strong { color: var(--navy); }
 
+/* ── CAREER JOURNEY ───────────────────────────────────────────── */
+#career { padding: 6rem 0 4rem; background: var(--white); }
+#career .section-title { margin-bottom: 0.4rem; }
+#career .section-sub   { margin-bottom: 3rem; }
+
+.timeline-wrap {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-items {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  min-width: 860px;
+}
+
+/* horizontal line through the dots */
+.timeline-items::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 90px; /* tl-top height */
+  height: 2px;
+  background: var(--navy);
+  z-index: 0;
+}
+
+.tl-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+
+.tl-top {
+  height: 90px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end;
+  padding-bottom: 10px;
+  text-align: center;
+  padding-left: 4px; padding-right: 4px;
+}
+
+.tl-dot {
+  width: 14px; height: 14px;
+  background: var(--navy);
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--navy);
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+
+.tl-btm {
+  height: 80px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  padding-top: 10px;
+  text-align: center;
+  padding-left: 4px; padding-right: 4px;
+}
+
+.tl-co {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--navy); display: block;
+  margin-bottom: 0.2rem;
+}
+
+.tl-role {
+  font-size: 0.68rem; color: var(--dgray);
+  display: block; line-height: 1.35;
+}
+
+.tl-date {
+  font-size: 0.68rem; font-style: italic;
+  color: var(--mgray); display: block;
+}
+
+.education-bar {
+  background: var(--lgray);
+  border-left: 4px solid var(--gold);
+  padding: 1.2rem 2rem;
+  font-size: 0.9rem; color: var(--dgray);
+  text-align: center;
+}
+
+/* ── WHERE STRATEGY MEETS EXECUTION ───────────────────────────── */
+#strategy { padding: 6rem 0; background: var(--lgray); }
+#strategy .section-title { margin-bottom: 0.4rem; }
+#strategy .section-sub   { margin-bottom: 3rem; }
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.strategy-card {
+  background: var(--white);
+  border-top: 4px solid var(--gold);
+  padding: 2rem 2rem 2.2rem;
+}
+
+.strategy-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.strategy-card ul {
+  list-style: none; padding: 0;
+}
+
+.strategy-card li {
+  font-size: 0.87rem; color: var(--dgray);
+  padding: 0.4rem 0 0.4rem 1.1rem;
+  position: relative;
+  border-bottom: 1px solid #EEF1F5;
+  line-height: 1.6;
+}
+
+.strategy-card li:last-child { border-bottom: none; }
+
+.strategy-card li::before {
+  content: '•'; position: absolute; left: 0;
+  color: var(--navy); font-size: 0.9rem;
+}
+
 /* ── CAMPAIGN GALLERY ──────────────────────────────────────────── */
 .campaign-gallery {
   grid-column: 1 / -1;
@@ -279,6 +412,30 @@ a:hover { color: var(--gold2); }
   line-height: 1.55; font-style: italic;
 }
 .gallery-cta { text-align: center; }
+.gallery-links {
+  display: flex; flex-wrap: wrap; gap: 0.8rem;
+  justify-content: center;
+}
+.gallery-link-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--navy); color: var(--white) !important;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.gallery-link-btn:hover {
+  background: var(--gold); color: var(--navy) !important;
+  transform: translateY(-2px);
+}
+.gallery-link-btn.secondary {
+  background: transparent;
+  color: var(--navy) !important;
+  border: 2px solid var(--navy);
+}
+.gallery-link-btn.secondary:hover {
+  background: var(--navy); color: var(--white) !important;
+}
 .tv-ad-btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--navy); color: var(--white) !important;
@@ -383,9 +540,10 @@ a:hover { color: var(--gold2); }
 
 /* ── RESPONSIVE ────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .web-grid   { grid-template-columns: repeat(2, 1fr); }
-  .ai-grid    { grid-template-columns: 1fr; }
+  .stats-grid    { grid-template-columns: repeat(2, 1fr); }
+  .web-grid      { grid-template-columns: repeat(2, 1fr); }
+  .ai-grid       { grid-template-columns: 1fr; }
+  .strategy-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px) {
