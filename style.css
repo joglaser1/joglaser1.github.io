@@ -485,7 +485,7 @@ a:hover { color: var(--gold2); }
 /* ── AI ────────────────────────────────────────────────────────── */
 #ai { padding: 6rem 0; background: #0D1A2E; }
 .ai-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
   margin-bottom: 2rem;
 }
 .ai-card {
@@ -544,7 +544,7 @@ a:hover { color: var(--gold2); }
 @media (max-width: 1024px) {
   .stats-grid    { grid-template-columns: repeat(2, 1fr); }
   .web-grid      { grid-template-columns: repeat(2, 1fr); }
-  .ai-grid       { grid-template-columns: 1fr; }
+  .ai-grid       { grid-template-columns: repeat(2, 1fr); }
   .strategy-grid { grid-template-columns: 1fr; }
 }
 
