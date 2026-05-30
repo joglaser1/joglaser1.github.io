@@ -400,17 +400,17 @@ a:hover { color: var(--gold2); }
 
 .gallery-figure {
   margin: 0;
-  background: var(--navy);
-  min-height: 220px;
+  background: var(--lgray);
   display: flex; flex-direction: column;
 }
 .gallery-img {
-  width: 100%; height: 260px; object-fit: cover;
-  display: block;
+  width: 100%; height: 180px; object-fit: contain;
+  display: block; padding: 0.5rem;
 }
+.gallery-grid-3 .gallery-img { height: 150px; }
 .gallery-figure figcaption {
-  font-size: 0.78rem; color: var(--dgray);
-  padding: 0.6rem 0.2rem 0.2rem;
+  font-size: 0.78rem; color: var(--gold);
+  padding: 0.4rem 0.6rem 0.6rem;
   line-height: 1.55; font-style: italic;
 }
 .gallery-cta { text-align: center; }
