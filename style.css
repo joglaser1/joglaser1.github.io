@@ -485,13 +485,13 @@ a:hover { color: var(--gold2); }
 }
 
 /* ── AI ────────────────────────────────────────────────────────── */
-#ai { padding: 6rem 0; background: #0D1A2E; }
+#ai { padding: 6rem 0; background: var(--navy3); }
 .ai-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
   margin-bottom: 2rem;
 }
 .ai-card {
-  background: #162A44;
+  background: var(--navy2);
   padding: 2rem 1.8rem;
 }
 .ai-tool {
@@ -499,11 +499,11 @@ a:hover { color: var(--gold2); }
   font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;
 }
 .ai-tool.teal, .ai-tool.green, .ai-tool.purple { color: var(--gold); }
-.ai-card p { font-size: 0.9rem; color: #CCDDEE; line-height: 1.7; }
+.ai-card p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.7; }
 .ai-insight {
-  background: #162A44;
+  background: var(--navy2);
   padding: 1.6rem 2rem;
-  font-size: 0.9rem; color: #AABBCC; line-height: 1.8;
+  font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.8;
 }
 .ai-insight strong { color: var(--gold); }
 
