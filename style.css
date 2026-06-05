@@ -2,11 +2,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:    #1B2A4A;
-  --navy2:   #22386A;
-  --navy3:   #121E35;
-  --gold:    #C8922A;
-  --gold2:   #E8AE50;
+  --navy:    #3D2B4F;
+  --navy2:   #4A3560;
+  --navy3:   #2D1F3D;
+  --gold:    #C9A87C;
+  --gold2:   #D4B896;
   --white:   #FFFFFF;
   --lgray:   #F4F6F8;
   --mgray:   #8A97A8;
@@ -220,7 +220,7 @@ a:hover { color: var(--gold2); }
   background: rgba(255,255,255,0.08);
   padding: 1.2rem 1rem; text-align: center; margin-top: auto;
 }
-.effie-callout { background: rgba(200,146,42,0.15); }
+.effie-callout { background: rgba(201,168,124,0.15); }
 .callout-num {
   font-family: var(--font-serif);
   font-size: 2.2rem; font-weight: 700;
