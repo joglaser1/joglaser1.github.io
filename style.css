@@ -126,14 +126,9 @@ a:hover { color: var(--gold2); }
   background: var(--navy); padding: 3rem 2.5rem;
   position: sticky; top: 5rem;
 }
-.about-left blockquote {
-  font-family: var(--font-serif);
-  font-size: 1.45rem; font-style: italic; font-weight: 700;
-  color: var(--white); line-height: 1.4; margin-bottom: 1.2rem;
-}
-.about-left cite {
-  color: var(--gold2); font-size: 0.9rem; font-style: italic;
-  display: block;
+.about-photo {
+  width: 100%; display: block;
+  object-fit: cover; object-position: top;
 }
 .about-right h2 {
   font-family: var(--font-serif);
