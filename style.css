@@ -127,8 +127,9 @@ a:hover { color: var(--gold2); }
   position: sticky; top: 5rem;
 }
 .about-photo {
-  width: 100%; display: block;
-  max-height: 380px;
+  width: 85%; display: block;
+  max-height: 320px;
+  margin: 0 auto;
   object-fit: cover; object-position: top center;
 }
 .about-right h2 {
