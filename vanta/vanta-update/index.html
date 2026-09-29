@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jody Glaser | Creative Director &amp; In-House Brand Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── Vanta page: light gray + blue palette (overrides shared style.css) ── */
+    :root {
+      --navy:  #1F4E79;   /* primary blue */
+      --navy2: #2E6DA4;   /* accent blue */
+      --navy3: #173B5C;   /* deep blue */
+      --gold:  #2E6DA4;   /* former gold accent, now blue */
+      --gold2: #BFD7EE;   /* light blue on dark backgrounds */
+      --sky:   #E6EEF6;   /* light blue-gray panels */
+      --lgray: #F4F6F8;
+      --mgray: #667587;
+      --dgray: #1C2B3A;
+      --line:  #DDE3EA;
+    }
+    body { background: #fff; }
+    a { color: var(--navy2); }
+    a:hover { color: var(--navy); }
+
+    /* Nav: light, always legible */
+    #nav, #nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--line);
+      box-shadow: none;
+    }
+    #nav.scrolled { box-shadow: 0 2px 14px rgba(28,43,58,0.08); }
+    .nav-name { color: var(--navy); }
+    .nav-links a { color: var(--dgray); }
+    .nav-links a:hover { color: var(--navy2); }
+    .nav-toggle { color: var(--navy); }
+
+    /* Hero */
+    #hero { background: linear-gradient(135deg, #F4F6F8 0%, #E6EEF6 100%); }
+    .gold-stripe { background: var(--navy); }
+    #hero h1 { color: var(--navy); }
+    .hero-sub { color: var(--navy2); }
+    .hero-rule { background: var(--navy2); }
+    .hero-desc { color: var(--mgray); }
+    .hero-links { color: var(--mgray); }
+    .hero-links a { color: var(--navy2); }
+    .hero-links .dot { color: #A7B3C1; }
+    .hero-cta { background: var(--navy); color: #fff; }
+    .hero-cta:hover { background: var(--navy2); color: #fff; }
+
+    /* About */
+    #about { background: #fff; }
+    .about-left { background: var(--sky); }
+    .gold-rule { background: var(--navy2); }
+    .competencies span { background: var(--lgray); border-left-color: var(--navy2); }
+
+    /* Numbers */
+    #numbers { background: var(--sky); }
+    .section-title.light { color: var(--navy); }
+    .section-sub.light { color: var(--mgray); }
+    .stat-card { border: 1px solid var(--line); border-top: 4px solid var(--navy2); }
+    .stat-card.effie { border-top: 4px solid var(--navy); }
+    .stat-num { color: var(--navy); }
+
+    /* Case studies */
+    .case-study { border: 1px solid var(--line); margin-bottom: 4rem; }
+    .navy, .dark-navy, .darkest-navy, .forest, .slate-blue,
+    .dark-green, .dark-indigo, .dark-emerald { background: var(--navy); }
+    .case-category { color: var(--gold2); }
+    .case-subtitle { color: #DCE8F4; }
+    .case-period { color: #A9C3DC; }
+    .case-callout, .effie-callout { background: rgba(255,255,255,0.1); }
+    .callout-num { color: #fff; }
+    .case-card { background: var(--lgray); border-bottom-color: var(--line); }
+    .case-card strong { color: var(--navy); }
+
+    /* Showcase gallery: large, natural-ratio visuals */
+    .campaign-gallery {
+      background: #fff; border-top: 1px solid var(--line);
+      padding: 2.5rem 2.5rem 2.5rem;
+    }
+    .gallery-label { color: var(--navy2); font-size: 0.78rem; margin-bottom: 1.6rem; }
+    .showcase { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+    .showcase-cols { columns: 2; column-gap: 1.5rem; }
+    .showcase-cols .gallery-figure { break-inside: avoid; margin-bottom: 1.5rem; }
+    .showcase-cols .gallery-figure:last-child { margin-bottom: 0; }
+    .gallery-figure {
+      margin: 0; background: var(--lgray);
+      border: 1px solid var(--line); display: block;
+    }
+    .gallery-figure img {
+      width: 100%; height: auto; display: block; cursor: zoom-in;
+      transition: opacity 0.2s;
+    }
+    .gallery-figure img:hover { opacity: 0.92; }
+    .gallery-figure figcaption {
+      font-size: 0.8rem; color: var(--mgray); font-style: normal;
+      padding: 0.7rem 1rem; border-top: 1px solid var(--line); background: #fff;
+    }
+    .tv-ad-btn, .gallery-link-btn { background: var(--navy); }
+    .tv-ad-btn:hover, .gallery-link-btn:hover { background: var(--navy2); color: #fff !important; }
+    .gallery-link-btn.secondary { color: var(--navy) !important; border-color: var(--navy); }
+    .gallery-link-btn.secondary:hover { background: var(--navy); color: #fff !important; }
+
+    /* Web */
+    #web { background: var(--lgray); }
+    .web-card { border-top-color: var(--navy2); }
+    .web-card li::before { color: var(--navy2); }
+
+    /* AI */
+    #ai { background: #fff; }
+    .ai-card { background: var(--lgray); border-top: 4px solid var(--navy2); }
+    .ai-tool.teal, .ai-tool.green, .ai-tool.purple { color: var(--navy); }
+    .ai-card p { color: var(--dgray); }
+    .ai-insight { background: var(--sky); color: var(--dgray); border-left: 4px solid var(--navy); }
+    .ai-insight strong { color: var(--navy); }
+
+    /* Contact */
+    #contact { background: var(--navy); }
+    #contact .gold-stripe { background: var(--gold2); }
+    .contact-tagline { color: var(--gold2); }
+    .contact-rule { background: var(--gold2); }
+    .contact-links a:hover { color: var(--gold2); }
+    .contact-footer { color: #A9C3DC; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 200; display: none;
+      align-items: center; justify-content: center;
+      background: rgba(15,28,42,0.9); padding: 2rem; cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+
+    @media (max-width: 900px) { .campaign-gallery { padding: 1.8rem 1.2rem; } }
+    @media (max-width: 640px) {
+      .nav-links { background: #fff; border-bottom: 1px solid var(--line); }
+      .showcase-cols { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Jody Glaser</span>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#numbers">Impact</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#web">Digital</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="gold-stripe"></div>
+  <div class="hero-content">
+    <h1>Jody Glaser</h1>
+    <p class="hero-sub">Creative Director &amp; In-House Brand Leader</p>
+    <div class="hero-rule"></div>
+    <p class="hero-desc">20+ Years &nbsp;·&nbsp; B2B SaaS &amp; Technology &nbsp;·&nbsp; Creative Teams &amp; Systems &nbsp;·&nbsp; Product-Brand Integration &nbsp;·&nbsp; AI-Forward</p>
+    <div class="hero-links">
+      <a href="mailto:joshear1@yahoo.com">joshear1@yahoo.com</a>
+      <span class="dot">·</span>
+      <a href="tel:4083077592">408.307.7592</a>
+      <span class="dot">·</span>
+      <a href="https://linkedin.com/in/jodysglaser" target="_blank">LinkedIn</a>
+    </div>
+    <a href="#work" class="hero-cta">View Portfolio ↓</a>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container two-col">
+    <div class="about-left">
+      <img src="../images/jody-headshot.jpg" alt="Jody Glaser, Creative Director and In-House Brand Leader" class="about-photo" />
+    </div>
+    <div class="about-right">
+      <h2>About Me</h2>
+      <div class="gold-rule"></div>
+
+      <p>Creative and brand leader with 20+ years building in-house creative functions at B2B technology companies, from high-growth startups to global enterprises. Known for building and mentoring senior creative talent, developing creative systems and processes from scratch, and translating complex B2B products into consumer-grade creative that moves markets.</p>
+
+      <p>Deep expertise spanning brand strategy, visual identity, integrated campaigns, and product-brand integration, with a track record of leading agencies and internal teams to deliver award-winning work at scale across FloQast, Juniper Networks, Uniphore, Mist Systems, BAE Systems, and Cisco.</p>
+
+      <h3>Core Competencies</h3>
+      <div class="competencies">
+        <span>Creative Team Leadership &amp; Mentorship</span>
+        <span>Brand-Product Integration</span>
+        <span>Creative Systems &amp; Process Development</span>
+        <span>In-House Creative Function Building</span>
+        <span>B2B SaaS Brand Strategy</span>
+        <span>Translating Complex Products to Compelling Creative</span>
+        <span>Cross-Functional Stakeholder Partnership</span>
+        <span>Operational Excellence &amp; Capacity Planning</span>
+        <span>Integrated Campaign Management</span>
+        <span>AI-Powered Creative Workflows</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BY THE NUMBERS ────────────────────────────────────────────── -->
+<section id="numbers">
+  <div class="container">
+    <h2 class="section-title light">Impact by the Numbers</h2>
+    <p class="section-sub light">A career defined by measurable, award-winning outcomes</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">10</div>
+        <div class="stat-label">Senior creatives led<br>at FloQast</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1,600%</div>
+        <div class="stat-label">Web traffic increase<br>(BAE Systems campaign)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$20M</div>
+        <div class="stat-label">Brand campaign<br>budget managed</div>
+      </div>
+      <div class="stat-card effie">
+        <div class="stat-num">Effie</div>
+        <div class="stat-label">Award winner, Cisco<br>"The Realm" campaign</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4×</div>
+        <div class="stat-label">Industry benchmark,<br>Cisco The Realm</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">70%</div>
+        <div class="stat-label">Increase in CTR,<br>FloQast Ads</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">9.7%</div>
+        <div class="stat-label">Engagement,<br>FloQast LinkedIn</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">Web pages migrated<br>to AEM at Juniper</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDIES ──────────────────────────────────────────────── -->
+<section id="work">
+  <div class="container">
+    <h2 class="section-title">Selected Work</h2>
+    <p class="section-sub">Leading creative teams, building brand systems, and launching products in B2B technology</p>
+
+    <!-- FloQast Brand System & Rebrand -->
+    <article class="case-study">
+      <div class="case-left dark-green">
+        <div class="case-category">IN-HOUSE CREATIVE LEADERSHIP · B2B SaaS</div>
+        <h3>FloQast<br>Brand System<br>&amp; Rebrand</h3>
+        <p class="case-subtitle">Built from Scratch.<br>Scaled Across the Team.<br>Market-Ready.</p>
+        <p class="case-period">2023-2026 · FloQast</p>
+        <div class="case-callout">
+          <div class="callout-num">Cohesive</div>
+          <div class="callout-label">creative system built and deployed across a growing team</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-card">
+          <div class="case-card-title">⚡ THE CHALLENGE</div>
+          <p>FloQast needed to elevate its visual identity and build a scalable creative system, establishing consistent design standards across a growing in-house team and expanding channel mix, while repositioning the brand for a larger enterprise market.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">🎯 THE APPROACH</div>
+          <p>Led the internal rebrand as the creative function leader: <strong>building design standards and creative systems from scratch</strong>, aligning stakeholders across product, marketing, and leadership, and managing execution from concept through deployment. Developed processes for intake, prioritization, and review that the team could run independently.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">✅ THE RESULT</div>
+          <p>A cohesive, scalable brand experience deployed across all channels and team members, with creative systems that <strong>improved team throughput, consistency, and quality</strong>, supporting messaging around AI Agents, compliance, and the accounting close process.</p>
+        </div>
+      </div>
+      <div class="campaign-gallery">
+        <div class="gallery-label">BRAND IN ACTION</div>
+        <div class="showcase">
+          <figure class="gallery-figure">
+            <img src="images/floqast-launch-stage.jpg" alt="FloQast new brand identity on the main stage" />
+            <figcaption>New identity on the main stage: The AI-Powered Accounting Transformation Platform</figcaption>
+          </figure>
+          <div class="showcase-cols">
+            <figure class="gallery-figure">
+              <img src="../images/floqast-rebrand-website.jpg" alt="FloQast rebrand, new website design" />
+              <figcaption>Redesigned website under new visual identity</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="images/floqast-cfo-email.jpg" alt="FloQast brand photography paired with product messaging" />
+              <figcaption>Brand photography paired with real customer moments</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/floqast-rebrand-compliance.jpg" alt="FloQast rebrand, compliance product page" />
+              <figcaption>Compliance product page: brand-product integration</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/FloQaat-rebrand-visual-builder.jpg" alt="FloQast rebrand, visual builder interface" />
+              <figcaption>Visual builder: design system applied consistently</figcaption>
+            </figure>
+          </div>
+          <figure class="gallery-figure">
+            <img src="images/floqast-ad-system.jpg" alt="FloQast paid ad creative in the new brand system" />
+            <figcaption>Paid ad system: one visual language across content, product, and compliance campaigns</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- FloQast AI Agents -->
+    <article class="case-study">
+      <div class="case-left dark-indigo">
+        <div class="case-category">PRODUCT LAUNCH · CREATIVE DIRECTION</div>
+        <h3>FloQast<br>AI Agents<br>Launch</h3>
+        <p class="case-subtitle">Complex Product.<br>Human Story.<br>Brand-Led Narrative.</p>
+        <p class="case-period">2023-Present · FloQast</p>
+        <div class="case-callout">
+          <div class="callout-num">Consumer-Grade</div>
+          <div class="callout-label">creative for a technically complex B2B product</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-card">
+          <div class="case-card-title">⚡ THE CHALLENGE</div>
+          <p>Translate a highly technical AI product into creative that would be emotionally resonant and accessible to accounting and finance professionals, without dumbing it down or losing the product's precision.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">🎯 THE APPROACH</div>
+          <p>Led the creative direction and managed an internal team through end-to-end production of a full asset pipeline: <strong>top-of-funnel video, high-impact digital, social assets, and event-driven media</strong>, all built around a single unified brand narrative. Provided clear creative standards and feedback to keep quality high across a fast-moving launch timeline.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">✅ THE RESULT</div>
+          <p>Successfully launched FloQast AI Agents with a cohesive, emotionally resonant creative program, positioning FloQast as <strong>"The First Accounting Transformation Platform Powered by AI Agents"</strong> and demonstrating that B2B creative can meet a consumer-grade bar.</p>
+        </div>
+      </div>
+      <div class="campaign-gallery">
+        <div class="gallery-label">CAMPAIGN IN ACTION</div>
+        <div class="showcase">
+          <div class="showcase-cols">
+            <figure class="gallery-figure">
+              <img src="../images/floqast-deploy-agents.jpg" alt="FloQast Deploy AI Agents campaign creative" />
+              <figcaption>Deploy AI Agents campaign creative</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="images/floqast-agents-arrived.jpg" alt="FloQast AI Agents and Transform launch announcement" />
+              <figcaption>AI Agents + Transform launch announcement</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/floqast-ai-agents-hubspot.jpg" alt="FloQast AI Agents case study" />
+              <figcaption>AI Agents case study: HubSpot integration</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="images/floqademy-badge.jpg" alt="FloQademy AI Agent Builder certification badge" />
+              <figcaption>FloQademy AI Agent Builder certification badge</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/Double-down.jpeg" alt="FloQast Double Down campaign creative asset" />
+              <figcaption>Double Down campaign creative asset</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery-cta">
+          <a href="https://www.youtube.com/watch?v=R3Up_kpayu8" target="_blank" rel="noopener noreferrer" class="tv-ad-btn">▶&nbsp; Watch the Campaign Video</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mist → Juniper -->
+    <article class="case-study">
+      <div class="case-left forest">
+        <div class="case-category">PRODUCT-BRAND INTEGRATION · ACQUISITION</div>
+        <h3>Mist Systems<br>→ Juniper</h3>
+        <p class="case-subtitle">Two Brands.<br>One Acquisition.<br>Seamless Integration.</p>
+        <p class="case-period">2018-2021 · Cupertino &amp; Sunnyvale, CA</p>
+        <div class="case-callout">
+          <div class="callout-num" style="font-size:1.3rem; line-height:1.2;">Brand + Product</div>
+          <div class="callout-label">unified across every channel and touchpoint</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-card">
+          <div class="case-card-title">⚡ THE CHALLENGE</div>
+          <p>Mist Systems, a fast-growing AI networking startup, needed a more professional brand to sell into the enterprise. Then Juniper Networks acquired Mist, requiring a full integration of product brand into corporate brand without disruption to either business.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">🎯 THE APPROACH</div>
+          <p>Built a new enterprise-ready brand for Mist, then led the <strong>product-brand integration</strong> post-acquisition, ensuring "Juniper driven by Mist AI" felt like a coherent brand promise, not a stapled-together acquisition. Managed transition across website, digital, physical, events, and all marketing channels.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">✅ THE RESULT</div>
+          <p>The <strong>"Juniper driven by Mist AI"</strong> brand launched with a unified digital and physical presence. The integration preserved Mist's brand equity while elevating it within the Juniper family, setting a template for how product and corporate brand can coexist and strengthen each other.</p>
+        </div>
+      </div>
+      <div class="campaign-gallery">
+        <div class="gallery-label">BRAND IN ACTION</div>
+        <div class="showcase">
+          <figure class="gallery-figure">
+            <img src="images/mist-ai-network.jpg" alt="Mist AI-driven network brand campaign" />
+            <figcaption>Brand campaign: "We built our AI-driven network with one thing in mind."</figcaption>
+          </figure>
+          <figure class="gallery-figure">
+            <img src="images/mist-live-demo.jpg" alt="Mist live demo campaign web banner" />
+            <figcaption>Live demo campaign: product UI and hardware in one brand story</figcaption>
+          </figure>
+          <figure class="gallery-figure">
+            <img src="images/mist-value-calculator.jpg" alt="Mist Value Calculator interactive tool" />
+            <figcaption>Mist Value Calculator: interactive ROI tool</figcaption>
+          </figure>
+          <div class="showcase-cols">
+            <figure class="gallery-figure">
+              <img src="../images/mist-sign.jpg" alt="Mist Systems office signage" />
+              <figcaption>Refreshed brand: office signage</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/mist-website.jpg" alt="Mist Systems website redesign" />
+              <figcaption>Mist Systems website under new brand</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/juniper-mist-logo.jpg" alt="Juniper driven by Mist AI" />
+              <figcaption>"Juniper driven by Mist AI": unified post-acquisition brand</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery-cta">
+          <a href="https://www.youtube.com/watch?v=ks42Gw7Sv4Q" target="_blank" rel="noopener noreferrer" class="tv-ad-btn">▶&nbsp; Watch the Brand Video</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- BAE Systems -->
+    <article class="case-study">
+      <div class="case-left navy">
+        <div class="case-category">AGENCY LEADERSHIP · BRAND CAMPAIGN</div>
+        <h3>BAE Systems<br>Cyber Division</h3>
+        <p class="case-subtitle">$20M Campaign.<br>Led Through Agency.<br>1,600% Lift.</p>
+        <p class="case-period">2015-2018 · Guildford, UK &amp; Los Altos, CA</p>
+        <div class="case-callout">
+          <div class="callout-num">1,600%</div>
+          <div class="callout-label">year-over-year increase in web traffic</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-card">
+          <div class="case-card-title">⚡ THE CHALLENGE</div>
+          <p>BAE Systems' Cyber Division had strong capabilities but near-zero brand awareness in the US. The challenge: build brand credibility and visibility from scratch with a complex, technical offering in a crowded, skeptical market.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">🎯 THE APPROACH</div>
+          <p>Directed agency strategy and execution for a $20M global brand awareness campaign, <strong>holding external creative teams to the same high standards as an internal function</strong>. Provided creative direction across TV, OOH, digital, and social, while managing timelines, stakeholders, and a global rollout across multiple markets.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">✅ THE RESULT</div>
+          <p>A 1,600% year-over-year increase in web traffic, establishing BAE Systems Cyber Division as a recognized US cybersecurity brand and demonstrating that <strong>bold, consumer-grade creative works in even the most technical B2B categories</strong>.</p>
+        </div>
+      </div>
+      <div class="campaign-gallery">
+        <div class="gallery-label">CAMPAIGN IN ACTION</div>
+        <div class="showcase">
+          <div class="showcase-cols">
+            <figure class="gallery-figure">
+              <img src="../images/bae-billboard.jpg" alt="BAE Systems airport OOH billboard" />
+              <figcaption>Airport OOH: "Cyber defense from BAE Systems." · Nationwide campaign</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/bae-print-ad.jpg" alt="BAE Systems print ad" />
+              <figcaption>Print ad featured in MediaPost (May 2016) for groundbreaking embedded video</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery-cta">
+          <a href="https://www.ispot.tv/ad/ABVx/bae-systems-defense" target="_blank" rel="noopener noreferrer" class="tv-ad-btn">▶&nbsp; Watch the TV Advertisement</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Cisco The Realm -->
+    <article class="case-study">
+      <div class="case-left dark-navy">
+        <div class="case-category">INTEGRATED CAMPAIGN · CREATIVE DIRECTION</div>
+        <h3>Cisco<br>"The Realm"</h3>
+        <p class="case-subtitle">4× Industry Benchmark.<br>Effie Award Winner.</p>
+        <p class="case-period">2008-2013 · San Jose, CA</p>
+        <div class="case-callout effie-callout">
+          <div class="callout-num">Effie</div>
+          <div class="callout-label">Award Winner: Bronze, Computer Hardware</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-card">
+          <div class="case-card-title">⚡ THE CHALLENGE</div>
+          <p>Cisco needed a breakthrough integrated security campaign that would cut through a crowded enterprise market and drive exceptional engagement with IT decision-makers, raising the ambition of what B2B creative could be.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">🎯 THE APPROACH</div>
+          <p>Managed the agency to develop a campaign built on a bold creative vision: <strong>"Cisco Defends Its Realm."</strong> Directed creative across an experiential RSA Conference activation, a microsite, a social contest, and a four-part animated video series with comic creator Mike Mayhew, holding the agency to a higher creative standard than typical enterprise campaigns.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-card-title">✅ THE RESULT</div>
+          <p><strong>4× industry average engagement</strong>. Earned a prestigious <strong>Effie Award</strong> (Bronze, Computer Hardware), the marketing industry's top award for effectiveness. Proof that creative ambition in B2B isn't just possible, it's the differentiator.</p>
+        </div>
+      </div>
+      <div class="campaign-gallery">
+        <div class="gallery-label">CAMPAIGN IN ACTION</div>
+        <div class="showcase">
+          <div class="showcase-cols">
+            <figure class="gallery-figure">
+              <img src="../images/cisco-realm-exhibitor.jpg" alt="Cisco Defends Its Realm, Exhibitoronline feature" />
+              <figcaption>Exhibitoronline feature: "Cisco Defends Its Realm" · RSA Conference 2009</figcaption>
+            </figure>
+            <figure class="gallery-figure">
+              <img src="../images/cisco-realm-creative.jpg" alt="The Realm campaign creative assets" />
+              <figcaption>Campaign creative: trading cards, merchandise &amp; The Realm microsite</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery-links">
+          <a href="https://www.youtube.com/watch?v=nGj2BMjhU_8" target="_blank" rel="noopener noreferrer" class="gallery-link-btn">▶&nbsp; Watch the Animated Series</a>
+          <a href="https://www.exhibitoronline.com/topics/article.asp?ID=674" target="_blank" rel="noopener noreferrer" class="gallery-link-btn secondary">📰&nbsp; Exhibitoronline Feature</a>
+          <a href="https://allthingsd.com/20090303/cisco-the-comic-book/" target="_blank" rel="noopener noreferrer" class="gallery-link-btn secondary">📰&nbsp; All Things Digital Coverage</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── WEB / DIGITAL ──────────────────────────────────────────────── -->
+<section id="web">
+  <div class="container">
+    <h2 class="section-title">Web Creation &amp; Management</h2>
+    <p class="section-sub">Transforming corporate websites into high-conversion, brand-led experiences for B2B SaaS companies</p>
+    <p class="web-intro">Led the strategic vision, UX direction, content architecture, and migration of flagship digital properties for Mist Systems, Juniper Networks, Uniphore, and FloQast, bridging creative vision, content strategy, and technical implementation.</p>
+    <div class="web-grid">
+      <div class="web-card">
+        <div class="web-company">FloQast</div>
+        <ul>
+          <li>Led rebrand and new visual identity launch including full website rebuild and migration from WordPress to Webflow</li>
+          <li>Positioned FloQast as the Accounting Transformation Platform, powered by AI Agents</li>
+          <li>Built and managed in-house team responsible for ongoing web strategy and execution</li>
+        </ul>
+      </div>
+      <div class="web-card">
+        <div class="web-company">Uniphore</div>
+        <ul>
+          <li>Managed website strategy as part of full brand transformation</li>
+          <li>Bridged creative vision, content strategy, and technical implementation across a distributed team</li>
+        </ul>
+      </div>
+      <div class="web-card">
+        <div class="web-company">Juniper Networks</div>
+        <ul>
+          <li>Led AEM content migration: multiple sites, 1,000+ pages</li>
+          <li>Managed content and creative strategy across Juniper.net and Mist.com simultaneously</li>
+        </ul>
+      </div>
+      <div class="web-card">
+        <div class="web-company">Mist Systems</div>
+        <ul>
+          <li>Managed ongoing website strategy, development, and content</li>
+          <li>Led rebrand and architecture modifications as the company scaled toward acquisition</li>
+          <li>Managed full Mist-to-Juniper transition across all digital channels</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AI & INNOVATION ───────────────────────────────────────────── -->
+<section id="ai">
+  <div class="container">
+    <h2 class="section-title">AI in Day-to-Day Creative Work</h2>
+    <p class="section-sub">Building genuine AI fluency, not just awareness, to lead creative teams in the next era</p>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <div class="ai-tool teal">Claude (Anthropic)</div>
+        <p>Daily creative partner for content development, campaign concepting, and building interactive tools and prototypes. Using Claude to accelerate creative workflows and raise the quality bar, not replace creative judgment.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-tool teal">Gemini (Google)</div>
+        <p>Research, content ideation, and cross-channel marketing insights. Using Gemini to explore new creative directions and challenge assumptions before committing to a direction.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-tool green">Replit</div>
+        <p>Prototyping web-based tools and interactive marketing experiences. Building hands-on fluency in the tools that are reshaping how creative teams work.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-tool purple">GitHub</div>
+        <p>Managing marketing technology projects and collaborating on digital tools and web properties, including this portfolio, built and maintained with AI assistance.</p>
+      </div>
+    </div>
+    <div class="ai-insight">
+      <strong>How I think about AI in creative work:</strong> AI is a force multiplier for strong creative judgment, not a replacement for it. I use AI to move faster, explore more directions, and maintain a higher quality bar, while applying the same critical eye I'd bring to any creative output. I actively build team fluency in these tools and hold AI-assisted work to the same standard as anything else we ship.
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="gold-stripe"></div>
+  <div class="contact-content">
+    <h2>Let's Connect</h2>
+    <p class="contact-tagline">Ready for what's next.</p>
+    <div class="contact-rule"></div>
+    <div class="contact-links">
+      <a href="mailto:joshear1@yahoo.com">📧 joshear1@yahoo.com</a>
+      <a href="tel:4083077592">📞 408.307.7592</a>
+      <a href="https://linkedin.com/in/jodysglaser" target="_blank">🔗 linkedin.com/in/jodysglaser</a>
+      <span>📍 Los Altos, CA</span>
+    </div>
+    <p class="contact-footer">Jody Shear Glaser &nbsp;·&nbsp; Creative Director &amp; In-House Brand Leader &nbsp;·&nbsp; 2026</p>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox"><img alt="" /></div>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  document.querySelector('.nav-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+
+  // Click any showcase image to view it full size
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('.gallery-figure img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>
