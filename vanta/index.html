@@ -84,9 +84,16 @@
     }
     .gallery-label { color: var(--navy2); font-size: 0.78rem; margin-bottom: 1.6rem; }
     .showcase { display: flex; flex-direction: column; gap: 1.5rem; max-width: 720px; margin: 0 auto 2rem; }
-    .showcase-cols { columns: 2; column-gap: 1.25rem; }
-    .showcase-cols .gallery-figure { break-inside: avoid; margin-bottom: 1.5rem; }
-    .showcase-cols .gallery-figure:last-child { margin-bottom: 0; }
+    /* Tile rows: equal-size frames so every image lines up */
+    .tiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+    .tiles .gallery-figure {
+      flex: 0 0 calc((100% - 1.25rem) / 2);
+      aspect-ratio: 4 / 5; padding: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tiles.landscape .gallery-figure { aspect-ratio: 4 / 3; }
+    .tiles.three .gallery-figure { flex-basis: calc((100% - 2.5rem) / 3); aspect-ratio: 1 / 1; }
+    .tiles .gallery-figure img { width: 100%; height: 100%; object-fit: contain; }
     .gallery-figure {
       margin: 0; background: var(--lgray);
       border: 1px solid var(--line); display: block;
@@ -138,7 +145,7 @@
     @media (max-width: 900px) { .campaign-gallery { padding: 1.8rem 1.2rem; } }
     @media (max-width: 640px) {
       .nav-links { background: #fff; border-bottom: 1px solid var(--line); }
-      .showcase-cols { columns: 1; }
+      .tiles .gallery-figure, .tiles.three .gallery-figure { flex-basis: 100%; }
     }
   </style>
 </head>
@@ -153,7 +160,6 @@
       <li><a href="#about">About</a></li>
       <li><a href="#numbers">Impact</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#ai">AI</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -289,7 +295,7 @@
           <figure class="gallery-figure">
             <img src="floqast-launch-stage.jpg" alt="FloQast new brand identity on the main stage" />
           </figure>
-          <div class="showcase-cols">
+          <div class="tiles">
             <figure class="gallery-figure">
               <img src="../images/floqast-rebrand-website.jpg" alt="FloQast rebrand, new website design" />
             </figure>
@@ -310,7 +316,7 @@
         <div class="case-category">PRODUCT LAUNCH · CREATIVE DIRECTION</div>
         <h3>FloQast<br>AI Agents<br>Launch</h3>
         <p class="case-subtitle">Complex Product.<br>Human Story.<br>Brand-Led Narrative.</p>
-        <p class="case-period">2023-Present · FloQast</p>
+        <p class="case-period">2023-2026 · FloQast</p>
         <div class="case-callout">
           <div class="callout-num">Consumer-Grade</div>
           <div class="callout-label">creative for a technically complex B2B product</div>
@@ -333,7 +339,7 @@
       <div class="campaign-gallery">
         <div class="gallery-label">CAMPAIGN IN ACTION</div>
         <div class="showcase">
-          <div class="showcase-cols">
+          <div class="tiles three">
             <figure class="gallery-figure">
               <img src="../images/floqast-deploy-agents.jpg" alt="FloQast Deploy AI Agents campaign creative" />
             </figure>
@@ -357,61 +363,6 @@
       </div>
     </article>
 
-    <!-- Mist → Juniper -->
-    <article class="case-study">
-      <div class="case-left forest">
-        <div class="case-category">PRODUCT-BRAND INTEGRATION · ACQUISITION</div>
-        <h3>Mist Systems<br>→ Juniper</h3>
-        <p class="case-subtitle">Two Brands.<br>One Acquisition.<br>Seamless Integration.</p>
-        <p class="case-period">2018-2021 · Cupertino &amp; Sunnyvale, CA</p>
-        <div class="case-callout">
-          <div class="callout-num" style="font-size:1.3rem; line-height:1.2;">Brand + Product</div>
-          <div class="callout-label">unified across every channel and touchpoint</div>
-        </div>
-      </div>
-      <div class="case-right">
-        <div class="case-card">
-          <div class="case-card-title">⚡ THE CHALLENGE</div>
-          <p>Mist Systems, a fast-growing AI networking startup, needed a more professional brand to sell into the enterprise. Then Juniper Networks acquired Mist, requiring a full integration of product brand into corporate brand without disruption to either business.</p>
-        </div>
-        <div class="case-card">
-          <div class="case-card-title">🎯 THE APPROACH</div>
-          <p>Built a new enterprise-ready brand for Mist, then led the <strong>product-brand integration</strong> post-acquisition, ensuring "Juniper driven by Mist AI" felt like a coherent brand promise, not a stapled-together acquisition. Managed transition across website, digital, physical, events, and all marketing channels.</p>
-        </div>
-        <div class="case-card">
-          <div class="case-card-title">✅ THE RESULT</div>
-          <p>The <strong>"Juniper driven by Mist AI"</strong> brand launched with a unified digital and physical presence. The integration preserved Mist's brand equity while elevating it within the Juniper family, setting a template for how product and corporate brand can coexist and strengthen each other.</p>
-        </div>
-      </div>
-      <div class="campaign-gallery">
-        <div class="gallery-label">BRAND IN ACTION</div>
-        <div class="showcase">
-          <figure class="gallery-figure">
-            <img src="mist-ai-network.jpg" alt="Mist AI-driven network brand campaign" />
-          </figure>
-          <figure class="gallery-figure">
-            <img src="mist-live-demo.jpg" alt="Mist live demo campaign web banner" />
-          </figure>
-          <figure class="gallery-figure">
-            <img src="mist-value-calculator.jpg" alt="Mist Value Calculator interactive tool" />
-          </figure>
-          <div class="showcase-cols">
-            <figure class="gallery-figure">
-              <img src="../images/mist-sign.jpg" alt="Mist Systems office signage" />
-            </figure>
-            <figure class="gallery-figure">
-              <img src="../images/mist-website.jpg" alt="Mist Systems website redesign" />
-            </figure>
-            <figure class="gallery-figure">
-              <img src="../images/juniper-mist-logo.jpg" alt="Juniper driven by Mist AI" />
-            </figure>
-          </div>
-        </div>
-        <div class="gallery-cta">
-          <a href="https://www.youtube.com/watch?v=ks42Gw7Sv4Q" target="_blank" rel="noopener noreferrer" class="tv-ad-btn">▶&nbsp; Watch the Brand Video</a>
-        </div>
-      </div>
-    </article>
 
     <!-- BAE Systems -->
     <article class="case-study">
@@ -436,13 +387,22 @@
         </div>
         <div class="case-card">
           <div class="case-card-title">✅ THE RESULT</div>
-          <p>A 1,600% year-over-year increase in web traffic, establishing BAE Systems Cyber Division as a recognized US cybersecurity brand and demonstrating that <strong>bold, consumer-grade creative works in even the most technical B2B categories</strong>.</p>
+          <p>A 1,600% year-over-year increase in web traffic, establishing BAE Systems Cyber Division as a recognized US cybersecurity brand.</p>
         </div>
       </div>
       <div class="campaign-gallery">
         <div class="gallery-label">CAMPAIGN IN ACTION</div>
         <div class="showcase">
-          <div class="showcase-cols">
+          <figure class="gallery-figure">
+            <img src="bae-highway-billboard.jpg" alt="BAE Systems billboard: Cyber defense from BAE Systems" />
+          </figure>
+          <div class="tiles landscape">
+            <figure class="gallery-figure">
+              <img src="bae-airport-poster.jpg" alt="BAE Systems airport poster: It's not just security. It's defense." />
+            </figure>
+            <figure class="gallery-figure">
+              <img src="bae-print-ad-cyber.jpg" alt="BAE Systems cyber defense print ad" />
+            </figure>
             <figure class="gallery-figure">
               <img src="../images/bae-billboard.jpg" alt="BAE Systems airport OOH billboard" />
             </figure>
@@ -486,14 +446,12 @@
       <div class="campaign-gallery">
         <div class="gallery-label">CAMPAIGN IN ACTION</div>
         <div class="showcase">
-          <div class="showcase-cols">
-            <figure class="gallery-figure">
-              <img src="../images/cisco-realm-exhibitor.jpg" alt="Cisco Defends Its Realm, Exhibitoronline feature" />
-            </figure>
-            <figure class="gallery-figure">
-              <img src="../images/cisco-realm-creative.jpg" alt="The Realm campaign creative assets" />
-            </figure>
-          </div>
+          <figure class="gallery-figure">
+            <img src="../images/cisco-realm-exhibitor.jpg" alt="Cisco Defends Its Realm, Exhibitoronline feature" />
+          </figure>
+          <figure class="gallery-figure">
+            <img src="../images/cisco-realm-creative.jpg" alt="The Realm campaign creative assets" />
+          </figure>
         </div>
         <div class="gallery-links">
           <a href="https://www.youtube.com/watch?v=nGj2BMjhU_8" target="_blank" rel="noopener noreferrer" class="gallery-link-btn">▶&nbsp; Watch the Animated Series</a>
@@ -503,35 +461,6 @@
       </div>
     </article>
 
-  </div>
-</section>
-
-<!-- ── AI & INNOVATION ───────────────────────────────────────────── -->
-<section id="ai">
-  <div class="container">
-    <h2 class="section-title">AI in Day-to-Day Creative Work</h2>
-    <p class="section-sub">Building genuine AI fluency, not just awareness, to lead creative teams in the next era</p>
-    <div class="ai-grid">
-      <div class="ai-card">
-        <div class="ai-tool teal">Claude (Anthropic)</div>
-        <p>Daily creative partner for content development, campaign concepting, and building interactive tools and prototypes. Using Claude to accelerate creative workflows and raise the quality bar, not replace creative judgment.</p>
-      </div>
-      <div class="ai-card">
-        <div class="ai-tool teal">Gemini (Google)</div>
-        <p>Research, content ideation, and cross-channel marketing insights. Using Gemini to explore new creative directions and challenge assumptions before committing to a direction.</p>
-      </div>
-      <div class="ai-card">
-        <div class="ai-tool green">Replit</div>
-        <p>Prototyping web-based tools and interactive marketing experiences. Building hands-on fluency in the tools that are reshaping how creative teams work.</p>
-      </div>
-      <div class="ai-card">
-        <div class="ai-tool purple">GitHub</div>
-        <p>Managing marketing technology projects and collaborating on digital tools and web properties, including this portfolio, built and maintained with AI assistance.</p>
-      </div>
-    </div>
-    <div class="ai-insight">
-      <strong>How I think about AI in creative work:</strong> AI is a force multiplier for strong creative judgment, not a replacement for it. I use AI to move faster, explore more directions, and maintain a higher quality bar, while applying the same critical eye I'd bring to any creative output. I actively build team fluency in these tools and hold AI-assisted work to the same standard as anything else we ship.
-    </div>
   </div>
 </section>
 
